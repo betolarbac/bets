@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Game</title>
+        <!--CSS-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/main.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/navbar.css" rel="stylesheet" type="text/css"/>
+        <!--script de ícones bootstrap 5.1.3-->
+        <script src="../js/jquery.js" type="text/javascript"></script>
+        <!--scripts-->
+        <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <style>
+            .card-height{
+                min-height: 140px;
+                max-height: 140px;
+            }
+            .card-b-rounded{
+                border-bottom-right-radius: .3rem;
+                border-bottom-left-radius: .3rem;
+            }
+        </style>
+        <!--navbar fixa ao topo-->
+        <div class="col-12 w-100 bg-yellow-patern fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <button class="btn btn-light border-0 rounded-0 fs-5 op-effect"><i class="bi bi-list"></i></button>
+                    </div>
+                    <div class="col-auto ms-auto d-flex align-items-center">
+                        <span class="fs-6 fw-bold text-white">Bem vindo(a)!</span>
+                        <img src="../files/img/bet.jpeg" class="logo-navbar-top ms-2 rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!--barra de navegação lateral esquerda-->
+        <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <img src="../files/img/bet.jpeg" class="logo-navbar rounded-3 box-shadow-light">
+                <h3 class="text-white ms-3">BET320</h3>
+                <button type="button" class="btn-close btn-close-white text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body px-0">
+                <div class="tags">
+                    <a href="inicio.html" class="open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-house ms-2 me-2"></i>Início
+                    </a>
+                    <a href="#" class="open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-currency-dollar ms-2 me-2"></i>Acumuladão
+                    </a>
+                    <a href="#" class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-star ms-2 me-2"></i>Futebol<i class="bi bi-chevron-compact-down float-end me-2"></i>
+                    </a>
+                    <!--dropdown do item acima-->
+                    <div class="category mb-1">
+                        <div class="open dropper btn btn-primary w-100 border-0 rounded-0 text-center">
+                            <i class="bi bi-flag me-2"></i>Jogos do dia<i class="bi bi-chevron-compact-down float-end me-2"></i>
+                        </div>
+                        <!--dropdown interno, mesma funcionalidade do item superior-->
+                        <div class="category text-center">
+                            <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-dot ms-1"></i>Quarta</p>
+                            <hr class="m-0 bg-light">
+                            <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-dot ms-1"></i>Sexta</p>
+                        </div>
+                    </div>
+                    <a href="aoVivo.html" class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-tv ms-2 me-2"></i>Ao vivo
+                    </a>
+                    <a class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-plus-circle ms-2 me-2"></i>Mais esportes<i class="bi bi-chevron-compact-down float-end me-2"></i>
+                    </a>
+                    <div class="category mb-1 text-center">
+                        <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-flag ms-1 me-2"></i>Tênis</p>
+                        <hr class="m-0 bg-light">
+                        <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-flag ms-1 me-2"></i>Vôlei</p>
+                    </div>
+                    <a href="regulamento.html" class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-journal-bookmark ms-2 me-2"></i>Regulamento
+                    </a>
+                    <a class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-check2-square ms-2 me-2"></i>Conferir Bilhete
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row mt-5">
+                <div class="col-12 p-2 bg-light rounded-3 box-shadow mb-5 tracking-in-expand">
+                    <p class="text-center"><span class="badge bg-primary rounded-pill fs-5">REGULAMENTO</span></p>
+                    <p><span class="badge bg-dark rounded-pill">REGRAS DE VALORES</span></p>
+                    <hr class="bg-dark">
+                    <p>1. O valor máximo por aposta é de R$ 1.000,00.</p>
+                    <p>2. O valor máximo por ganho de aposta é de R$ 30.000,00</p>
+                    <p>Só pagaremos prêmios mediante a apresentação do bilhete.</p>
+                     <hr class="bg-dark">
+                     <p><span class="badge bg-dark rounded-pill">TERMOS E CONDIÇÕES</span></p>
+                    <p>SPORTMAX.BET é um site online registrado em Malta.</p>
+                    <p>As apostas realizadas na SPORTMAX.BET serão regidas e interpretadas de acordo com as leis de Malta.</p>
+                    <p>Participantes terão que ser maiores de 18 anos de idade.</p>
+                     <hr class="bg-dark">
+                     <p><span class="badge bg-dark rounded-pill">REGRAS DE APOSTAS</span></p>
+                    <p>90 Minutos de Jogo:</p>
+                    <p>Todos os jogos são baseados no resultado ao final dos 90 minutos de jogo. Isto inclui qualquer tempo de compensação, mas não inclui: prorrogação, gol de ouro ou marcações de grandes penalidades.</p>
+                    <p>Jogos Adiados, Reagendados ou Abandonados:</p>
+                    <p>Quaisquer jogos não jogados ou adiados serão considerados "Não Participantes" para efeitos de resolução de apostas, a menos que sejam jogados em até 48 horas. Na eventualidade de isto acontecer, as apostas serão mantidas. Se o jogo não acontecer até o prazo final estipulado, todas as apostas serão canceladas e o dinheiro das apostas serão devolvidos (ressalva para casos onde a confederação determinar o jogo como finalizado antes dos 90 minutos, sendo assim o resultado final prevalecerá para resolução de apostas). Se houverem outros jogos em apostas “casadinha” ou “combinada” esses continuarão valendo.</p>
+                    <p>Se uma partida for iniciada e não for completada, só valerão as apostas que forem resolvidas. Apostas indecisas serão devolvidas. Se a partida for remarcada para até 48 horas, as apostas continuarão em abertas, aguardando a finalização da partida.</p>
+                     <hr class="bg-dark">
+                     <p><span class="badge bg-dark rounded-pill">RESULTADO AO INTERVALO</span></p>
+                    <p>As apostas serão anuladas se o jogo for abandonado antes do intervalo. Se o jogo for abandonado só no segundo tempo e sua aposta foi intervalo, a aposta valerá.</p>
+                    
+                    <p>Apostas em Handicap de Gol (também conhecido como Handicap Europeu ou Handicap de Resultado):</p>
+                    <p>As apostas ganhadoras deverão prever o vencedor do jogo no final do Tempo Normal depois que a pontuação final tenha sido ajustada pelo handicap.</p>
+                    <p>Apostas em empate handicap sempre se referem ao time da casa independentemente seja para mais ou menos.</p>
+                    <p>No Handicap de Gol, temos acesso a linhas tanto para as vitórias da equipa A e B, como também para o empate, e as linhas oferecidas são sempre em números inteiros, e somente números inteiros. Vejamos um exemplo prático:</p>
+                    <p>Jogo: Alemanha x Portugal</p>
+                    <p>Alemanha -1 : A Alemanha terá que vencer por mais de 1 gol de diferença (Ex.: 3-1).</p>
+                    <p>Empate -1 : A Alemanha só poderá vencer por 1 gol de diferença (Ex.: 2-1 ou 3-2).</p>
+                    <p>Portugal +1 : Portugal terá que vencer ou empatar (Ex.: 3-3).</p>
+                    
+                    <p>Nova formatação de Handicap de Gol (também conhecido como Handicap Europeu ou Handicap de Resultado):</p>
+                    <p>Handicap 0:1</p>
+                    <p>Aposta no time da casa (time da casa já começa a partida perdendo de 1x0. Logo, essa aposta é pra equipe da casa virar o jogo, ou seja, ganhar por uma diferença de pelo menos 2 gols, antigo handicap casa-1).</p>
+                    <p>Aposta no time de fora (time de fora já começa a partida ganhando de 1x0. Logo, essa aposta só será perdedora se o time da casa ganhar a partida, ou seja, o time de fora precisa empatar ou ganhar pra aposta ser vencedora, antigo handicap fora+1).</p>
+                    <p>Aposta no empate (como o time de fora já começa a partida ganhando de 1x0, pra partida terminar empate pro handicap, o time da casa precisa ganhar a partida por 1 gol de diferença exatamente. Só dessa forma a aposta será vencedora, antigo handicap empate+1).</p>
+                    
+                    <p>Handicap 1:0</p>
+                    <p>Aposta no time da casa (time da casa já começa a partida ganhando de 1x0. Logo, essa aposta só será perdedora se o time de fora ganhar a partida, ou seja, o time da casa precisa empatar ou ganhar pra aposta ser vencedora, antigo handicap casa+1).</p>
+                    <p>Aposta no time de fora (time e fora já começa a partida perdendo de 1x0. Logo, essa aposta é pra equipe de fora virar o jogo, ou seja, ganhar por uma diferença de pelo menos 2 gols, antigo handicap fora-1).</p>
+                    <p>Aposta no empate (como o time da casa já começa a partida ganhando de 1x0, pra partida terminar empate pro handicap, o time de fora precisa ganhar a partida por 1 gol de diferença exatamente. Só dessa forma a aposta será vencedora, antigo handicap empate-1).</p>
+                    <p>* Outros handicaps seguem a mesma formatação (Handicap 0:1,Handicap 1:0,Handicap 0:2,Handicap 2:0,Handicap 0:3,Handicap 3:0,Handicap 0:4,Handicap 4:0, etc...).</p>
+                    
+                    
+                    
+                     <hr class="bg-dark">
+                     <p><span class="badge bg-dark rounded-pill">EVENTOS DE MINUTOS</span></p>
+                    <p>Para um evento de 10 minutos, por exemplo, os resultados apostados devem acontecer entre 00:00 e 09:59 (minutos) para serem contados dentro dos primeiros 10 minutos (ex.: um escanteio atribuído neste período, mas cobrado após os 10 minutos não conta. O mesmo vale para laterais, pênaltis, gols, etc...).</p>
+                    <p>Gols Mais/Menos:</p>
+                    <p>Exemplos:</p>
+                    <p>Gols - Menos de 2.5: As apostas ganham se houver 0, 1 ou 2 gols marcados no jogo. As apostas perdem se houver 3 ou mais gols marcados no jogo.</p>
+                    <p>Gols - Mais de 2.5: As apostas ganham se houver 3 ou mais gols marcados no jogo. As apostas perdem se houver 0, 1 ou 2 gols no jogo.</p>
+                    <p>As apostas serão invalidadas se o encontro for abandonado, a não ser que o resultado já tenha sido determinado (a regra também vale para o evento: tempo com mais gols).</p>
+                    
+                    <p>Para Ganhar Ambas as Partes:</p>
+                    <p>O time escolhido tem que marcar mais gols que o adversário em ambas as partes do jogo.</p>
+                    
+                    <p>Para Marcar Ambas as Partes:</p>
+                    <p>O time escolhido tem que marcar pelo menos 1 gol em cada tempo de jogo.</p>
+                    
+                    <p><span class="badge bg-dark rounded-pill">APOSTAS ESPECIAIS</span></p>
+                    <p>Fora devolve a aposta:</p>
+                    <p>Time da casa (quem apostar nessa opção só será vencedor o time da casa ganhar. Se for empate perde e se o visitante ganhar a aposta será devolvida).</p>
+                    <p>Empate (quem apostar nessa opção só será vencedor se o jogo for empate. Se o time da casa ganhar perde e se o visitante ganhar a aposta será devolvida).</p>
+                    <p>Casa devolve a aposta:</p>
+                    <p>Time de fora (quem apostar nessa opção só será vencedor o time de fora ganhar. Se for empate perde e se o da casa ganhar a aposta será devolvida).</p>
+                    <p>Empate (quem apostar nessa opção só será vencedor se o jogo for empate. Se o time de fora ganhar perde e se o da casa ganhar a aposta será devolvida).</p>
+                    <p>Apostas em todas as opções de marcadores de gols: É de responsabilidade do cliente saber se o jogador escolhido irá jogar a partida. Apostas em que jogadores não entrarem em campo por qualquer tipo de evento (machucado, reserva, etc...) ou serem substituídos sem marcar gol, será computada como perdida. Jogadores que marcarem gol contra não valerá pra resolução de apostas, apenas valerá gol a favor.</p>
+                    <p>Apostas em basquete: Apostas de total de pontos e Impar/par valerá o resultado com prorrogação.</p>
+                    <p><span class="badge bg-dark rounded-pill">Apostas Ao Vivo</span></p>
+                    <p>Pode-se apostar em partidas em andamento. Essas apostas estarão disponíveis na aba AO VIVO. Para efeito de segurança, toda aposta AO VIVO terá um delay de 30 segundos, depois da aposta colocada. A SPORTMAX não pagará prêmios de jogos que por erro de sistema ficaram abertas. Neste caso, a aposta será cancelada e o apostador terá o dinheiro devolvido.</p>
+                    <p><span class="badge bg-danger rounded-pill">Erro de Sistema</span></p>
+                    <p>A BET320 não pagará prêmios de jogos que já tenham começados e por erro de sistema continuaram disponíveis para apostas (isso inclui apostas antecipadas e apostas ao vivo). Neste caso, as apostas serão canceladas e o apostador terá o dinheiro devolvido.</p>
+                    <p><span class="badge bg-danger rounded-pill">Erro de Cotação</span></p>
+                    <p>A BET320 não pagará prêmios de jogos que por erro de sistema tiveram as cotações inseridas incorretamente, onde visivelmente são demasiadamente altas (isso inclui apostas antecipadas e apostas ao vivo). Neste caso, as apostas serão canceladas e o apostador terá o dinheiro devolvido.</p>
+                    
+                    <p><span class="badge bg-dark rounded-pill">JOGO RESPONSÁVEL</span></p>
+                    <p>O Nosso Compromisso</p>
+                    <p>A BET320 está empenhada em promover o Jogo Responsável. Promovemos o jogo como uma atividade de lazer e acreditamos que o jogo apenas poderá ser desfrutado desta forma de se mantiver o controle e jogar de forma responsável. No entanto, sabemos que para algumas pessoas, o jogo pode deixar de ser uma atividade de lazer inofensiva e tornar-se um problema.</p>
+                    <p>1. O jogo deve ser visto como uma forma de entretenimento e não como uma forma de fazer dinheiro.</p>
+                    <p>2. Aposte com sensatez e nunca persiga perdas.</p>
+                    <p>3. Aposte apenas aquilo que se pode dar ao luxo de perder.</p>
+                    <p>4. Monitorize o tempo que passa a jogar.</p>
+                    <p>5. Faça pausas do jogo regularmente. Jogar de forma contínua pode fazer com que perca noção de tempo e perspectiva.</p>
+                    <p>6. Não jogue sob influência de álcool ou quando se sente aborrecido (a) ou deprimido (a).</p>
+                    <p>Se possuir preocupações com o seu jogo, favor nos contatar para o cancelamento da conta.</p>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <script>
+            $(function () {
+
+                //dropdowns script único
+
+                $(".category").hide();
+                $(".tags .dropper").addClass("open");
+
+                var cat_open = 0;
+
+                $(".tags .dropper").click(function () {
+                    $(this).next('.category').animate({"height": "toggle"}, 500);
+                });
+            });
+        </script>
+    </body>
+</html>

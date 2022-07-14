@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Game</title>
+        <!--CSS-->
+        <link href="../css/main.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/navbar.css" rel="stylesheet" type="text/css"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--script de ícones bootstrap 5.1.3-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <!--scripts-->
+        <script src="../js/jquery.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <style>
+            .card-height{
+                min-height: 140px;
+                max-height: 140px;
+            }
+            .game-img-frame{
+                background: url(../files/img/soccer.jpg) center;
+                width: 100%;
+                min-height: 170px;
+                max-height: 220px;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+        <!--navbar fixa ao topo-->
+        <div class="col-12 w-100 bg-yellow-patern fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <button class="btn btn-light border-0 rounded-0 fs-5 op-effect"><i class="bi bi-list"></i></button>
+                    </div>
+                    <div class="col-auto ms-auto d-flex align-items-center">
+                        <span class="fs-6 fw-bold text-white">Bem vindo(a)!</span>
+                        <img src="../files/img/bet.jpeg" class="logo-navbar-top ms-2 rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--barra de navegação lateral esquerda-->
+        <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <img src="../files/img/bet.jpeg" class="logo-navbar rounded-3 box-shadow-light">
+                <h3 class="text-white ms-3">BET320</h3>
+                <button type="button" class="btn-close btn-close-white text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body px-0">
+                <div class="tags">
+                    <a href="inicio.html" class="open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-house ms-2 me-2"></i>Início
+                    </a>
+                    <a href="#" class="open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-currency-dollar ms-2 me-2"></i>Acumuladão
+                    </a>
+                    <a href="#" class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-star ms-2 me-2"></i>Futebol<i class="bi bi-chevron-compact-down float-end me-2"></i>
+                    </a>
+                    <!--dropdown do item acima-->
+                    <div class="category mb-1">
+                        <div class="open dropper btn btn-primary w-100 border-0 rounded-0 text-center">
+                            <i class="bi bi-flag me-2"></i>Jogos do dia<i class="bi bi-chevron-compact-down float-end me-2"></i>
+                        </div>
+                        <!--dropdown interno, mesma funcionalidade do item superior-->
+                        <div class="category text-center">
+                            <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-dot ms-1"></i>Quarta</p>
+                            <hr class="m-0 bg-light">
+                            <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-dot ms-1"></i>Sexta</p>
+                        </div>
+                    </div>
+                    <a href="aoVivo.html" class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-tv ms-2 me-2"></i>Ao vivo
+                    </a>
+                    <a class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-plus-circle ms-2 me-2"></i>Mais esportes<i class="bi bi-chevron-compact-down float-end me-2"></i>
+                    </a>
+                    <div class="category mb-1 text-center">
+                        <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-flag ms-1 me-2"></i>Tênis</p>
+                        <hr class="m-0 bg-light">
+                        <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-flag ms-1 me-2"></i>Vôlei</p>
+                    </div>
+                    <a href="regulamento.html" class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-journal-bookmark ms-2 me-2"></i>Regulamento
+                    </a>
+                    <a class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-check2-square ms-2 me-2"></i>Conferir Bilhete
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container mt-5">
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="col-12 text-center fs-5 fw-bold tracking-in-expand">Espanha -Primeira Liga</div>
+                    <div class="col-lg-6 mx-auto text-center my-2">
+                        <span class="fs-5 fw-light tracking-in-expand">Granada CF</span>
+                    </div>
+                    <div class="col-lg-6 mx-auto text-center slide-in-elliptic-top-fwd">
+                        <div class="col-6 mx-auto bg-primary rounded-pill">
+                            <span class="d-inline fw-bold text-white fs-4">2</span>
+                            <i class="d-inline text-white bi bi-x-lg"></i>
+                            <span class="d-inline fw-bold text-white fs-4">2</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mx-auto text-center my-2">
+                        <span class="fs-5 fw-light tracking-in-expand">Athletic Bilbao</span>
+                    </div>
+                    <div class="col-lg-6 mx-auto my-2">
+                        <div class="col-12 text-center my-2">
+                            <span class="badge bg-secondary text-center fs-6 tracking-in-expand"><i class="me-2 bi bi-clock-history"></i>38´ (1º Tempo)</span>
+                        </div>
+                        <div class="col-12">
+                            <div class="game-img-frame rounded-3 p-2 d-flex align-items-center slide-in-elliptic-top-fwd">
+                                <!--tabela de jogos-->
+                                <div class="col-12 my-2">
+                                    <div class="table-responsive rounded-3">
+                                        <table class="table table-dark table-striped table-hover align-middle cursor-pointer fs-6 opacity-75">
+                                            <thead>
+                                                <!--escopo da tabela-->
+                                                <tr>
+                                                    <th scope="col">Inglaterra - Liga Premiada</th>
+                                                    <th>1T</th>
+                                                    <th>2T</th>
+                                                    <th><i class="bi bi-flag"></i></th>
+                                                    <th><i class="bi bi-bookmark-fill text-warning"></i></th>
+                                                    <th><i class="bi bi-bookmark-fill text-danger"></i></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!--linha da tabela-->
+                                                <tr>
+                                                    <th>Aston Villa</th>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 mx-auto">
+                        <div class="col-12 mt-3">
+                            <p class="fs-5 fw-bold text-black text-center">Tipo de aposta</p>
+                            <hr class="bg-dark">
+                        </div>
+                        <!--repetir modelo no backend para gerar layouts -->
+                        <div class="col-12 p-1 bg-secondary rounded-3">
+                            <span class="text-white fs-6">Vencedor do encontro(Ao vivo)</span>
+                        </div>
+                        <div class="col-12 my-3">
+                            <div class="col-12">
+                                <!--linha do resultado-->
+                                <div class="row">
+                                    <div class="col-7">
+                                        <span class="fs-6">Casa</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <span class="fs-6 badge bg-primary float-end">15,00</span>
+                                    </div>
+                                </div>
+                                <hr class="my-2 bg-dark">
+                            </div>
+                        </div>
+                        <!--________________________-->
+                        <!--repetir modelo no backend para gerar layouts -->
+                        <div class="col-12 p-1 bg-secondary rounded-3">
+                            <span class="text-white fs-6">Marca o 4º gol (Ao Vivo)</span>
+                        </div>
+                        <div class="col-12 my-3">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <span class="fs-6">Fora</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <span class="fs-6 badge bg-primary float-end"><i class="bi bi-lock"></i></span>
+                                    </div>
+                                </div>
+                                <hr class="my-2 bg-dark">
+                            </div>
+                        </div>
+                        <!--________________________-->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+
+                //dropdowns script único
+
+                $(".category").hide();
+                $(".tags .dropper").addClass("open");
+
+                var cat_open = 0;
+
+                $(".tags .dropper").click(function () {
+                    $(this).next('.category').animate({"height": "toggle"}, 500);
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Game</title>
+        <!--CSS-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/main.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/navbar.css" rel="stylesheet" type="text/css"/>
+        <!--script de ícones bootstrap 5.1.3-->
+        <script src="../js/jquery.js" type="text/javascript"></script>
+        <!--scripts-->
+        <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <!-- Modal de bilhete validado com sucesso-->
+        <div class="modal fade" id="bilhete-ok" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><i class="me-2 bi bi-ticket-detailed"></i>Bilhete Nº #23131</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="mb-1"><span class="badge bg-secondary rounded-pill">Casa - 2x1</span></p>
+                        <p class="mb-1"><span class="badge bg-secondary rounded-pill">2º tempo 2x1</span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Concluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--navbar fixa ao topo-->
+        <div class="col-12 w-100 bg-yellow-patern fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <button class="btn btn-light border-0 rounded-0 fs-5 op-effect"><i class="bi bi-list"></i></button>
+                    </div>
+                    <div class="col-auto ms-auto d-flex align-items-center">
+                        <span class="fs-6 fw-bold text-white">Bem vindo(a)!</span>
+                        <img src="../files/img/bet.jpeg" class="logo-navbar-top ms-2 rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--barra de navegação lateral esquerda-->
+        <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <img src="../files/img/bet.jpeg" class="logo-navbar rounded-3 box-shadow-light">
+                <h3 class="text-white ms-3">Admin<i class="ms-2 bi bi-person-bounding-box"></i></h3>
+                <button type="button" class="btn-close btn-close-white text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body px-0">
+                <div class="tags">
+                    <a href="caixa.html" class="open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-piggy-bank ms-2 me-2"></i>Caixa
+                    </a>
+                    <a href="#" class="open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-file-earmark-spreadsheet ms-2 me-2"></i>Relatórios
+                    </a>
+                    <a href="aoVivo.html" class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-tv ms-2 me-2"></i>Caixa Gerentes
+                    </a>
+                    <a class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-plus-circle ms-2 me-2"></i>Mais esportes<i class="bi bi-chevron-compact-down float-end me-2"></i>
+                    </a>
+                    <div class="category mb-1 text-center">
+                        <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-flag ms-1 me-2"></i>Tênis</p>
+                        <hr class="m-0 bg-light">
+                        <p class="fs-6 fw-bold bg-light m-0 cursor-pointer hover-1"><i class="bi bi-flag ms-1 me-2"></i>Vôlei</p>
+                    </div>
+                    <a href="regulamento.html" class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-journal-bookmark ms-2 me-2"></i>Regulamento
+                    </a>
+                    <a class="no-underline open dropper btn btn-light hover-1 w-100 border-0 rounded-0 text-start mb-1">
+                        <i class="bi bi-check2-square ms-2 me-2"></i>Conferir Bilhete
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row mt-5">
+                <div class="col-12">
+                    <p class="fs-5 fw-light m-0">Gerenciamento de risco</p>
+                    <hr class="bg-primary">
+                </div>
+                <!--Apostas ao vivo-->
+                <div class="col-12 my-2">
+                    <p class="fs-5 fw-light fw-light fs-6"><span class="badge bg-primary rounded-pill">Apostas em aberto</span></p>
+                    <div class="table-responsive rounded-3 text-center">
+                        <table class="table table-dark table-striped table-hover align-middle cursor-pointer fs-6 opacity-75">
+                            <thead>
+                                <!--escopo da tabela-->
+                                <tr>
+                                    <th scope="col" class="custom-wth-120 border-end border-1">Data | Hora</th>
+                                    <th class="border-end border-1 custom-wth-250">Usuário</th>
+                                    <th class="border-end border-1">Bilhete Nº</th>
+                                    <th class="border-end border-1 custom-wth-120">Valor apostado</th>
+                                    <th class="border-end border-1">Possível retorno</th>
+                                    <th class="border-end border-1">Apostas abertas</th>
+                                    <th class="border-end border-1">Apostas bilhete</th>
+                                    <th class="border-end border-1">Bilhetes iguais</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--linha da tabela-->
+                                <tr>
+                                    <th>
+                                        <span class="d-block">20/05/2022</span>
+                                        <span>19:45:30</span>
+                                    </th>
+                                    <td class="custom-wth-250">
+                                        Usuário 19
+                                    </td>
+                                    <td>
+                                        <span class="badge rounded-pill bg-light text-black">2423124</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge rounded-pill bg-primary">100,00</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge rounded-pill bg-success">150,00</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge rounded-pill bg-light text-black">25</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge rounded-pill bg-light text-black">12</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge rounded-pill bg-light text-black">6</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <span class="badge bg-secondary cursor-pointer hover-1 float-end">Próximo<i class="ms-1 bi bi-caret-right"></i></span>
+                    <span class="badge bg-secondary me-1 float-end">10/100(Resultados)</span>
+                    <span class="badge bg-secondary me-1 cursor-pointer hover-1 float-end"><i class="me-1 bi bi-caret-left"></i>Anterior</span>
+                </div>
+                <div class="col-12 mt-3">
+                    <p class="fs-5 fw-light text-black">Conferir bilhete</p>
+                    <hr class="bg-primary">
+                </div>
+                <div class="col-lg-5 mx-lg-auto mt-5">
+                    <div class="p-2 bg-light box-shadow rounded-3">
+                        <div class="col-12 text-center">
+                            <div class="col w-100 my-4 badge bg-primary rounded-pill fs-5 fw-light">Visualizar bilhete<i class="ms-2 bi bi-ticket-detailed"></i></div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Código do bilhete..." aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bilhete-ok">Checar<i class="ms-2 bi bi-check2-circle"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script>
+            $(function () {
+                //dropdowns script único
+                $(".category").hide();
+                $(".tags .dropper").addClass("open");
+                var cat_open = 0;
+                $(".tags .dropper").click(function () {
+                    $(this).next('.category').animate({"height": "toggle"}, 500);
+                });
+            });
+        </script>
+    </body>
+</html>

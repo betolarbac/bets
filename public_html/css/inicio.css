@@ -1,0 +1,16 @@
+.card-height{
+    min-height: 180px;
+    max-height: 180px;
+}
+.card-b-rounded{
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+}
+.bkg-cards{
+    /*Imagem ilustrativa(Passar parametros da imagem na tag <img>)*/
+    background: url(../files/img/soccer.jpg) center;
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

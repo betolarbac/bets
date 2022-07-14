@@ -1,0 +1,19 @@
+.nav-floater{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.logo-navbar{
+    width: 120px;
+    height: auto;
+}
+.logo-navbar-top{
+    width: 32px;
+    height: auto;
+}
+.bg-nav-itens{
+    background-color: #2c3e50;
+}
+.op-effect:hover{
+    background-color: #bdc3c7;
+}
